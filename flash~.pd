@@ -1,0 +1,27 @@
+#N canvas 246 356 974 557 10;
+#X obj 29 230 *~;
+#X obj 30 123 vline~;
+#X obj 30 183 *~;
+#X obj 75 123 noise~;
+#X obj 30 33 inlet;
+#X obj 30 272 +~;
+#X msg 30 82 4 0 0 \, 0 5 2 \, 4 0 140 \, 0 5 140;
+#X obj 73 33 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 74 182 bp~ 3500 100;
+#X text 263 39 Seymur Mammadli;
+#X text 269 111 Simple Flash patch;
+#X text 272 135 Becuase of the very good shutter sound I have tried
+to keep this patch as simple as possible in order to not mixing with
+shutter sound;
+#X obj 30 333 outlet~;
+#X connect 0 0 5 0;
+#X connect 1 0 2 0;
+#X connect 1 0 2 1;
+#X connect 2 0 0 0;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 12 0;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 8 0 0 1;

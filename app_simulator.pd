@@ -1,0 +1,320 @@
+#N canvas 166 63 959 978 10;
+#X obj 403 313 cnv 15 500 300 empty empty empty 20 12 0 14 -233017
+-66577 0;
+#X obj 603 233 cnv 15 200 80 empty empty empty 20 12 0 14 -99865 -66577
+0;
+#X obj 657 238 cnv 15 100 60 empty empty empty 20 12 0 14 -204800 -66577
+0;
+#X obj 453 293 cnv 15 100 20 empty empty empty 20 12 0 14 -191407 -66577
+0;
+#X obj 481 253 bng 40 250 50 0 shut_photo empty empty 17 7 0 10 -66577
+-1 -1;
+#X text 469 389 Polaroid;
+#X obj 426 593 cnv 15 440 20 empty empty empty 20 12 0 14 -228856 -66577
+0;
+#X obj 425 599 cnv 15 460 60 empty empty empty 20 12 0 14 -128992 -66577
+0;
+#X obj 437 634 cnv 15 440 10 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 425 600 cnv 15 460 10 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 440 645 cnv 15 430 200 empty empty empty 20 12 0 14 -204786
+-66577 0;
+#X obj 657 246 cnv 15 100 5 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 657 261 cnv 15 100 5 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 657 278 cnv 15 100 5 empty empty empty 20 12 0 14 -262130 -66577
+0;
+#X obj 595 353 cnv 15 220 220 empty empty empty 20 12 0 14 -66577 -66577
+0;
+#X obj 606 361 bng 200 250 50 0 empty lens_blink empty 17 7 0 10 -44926
+-4032 -4160;
+#X text 382 252 Start button;
+#X text 248 413 Adjust Paper Count;
+#X obj 31 284 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 50 285 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 71 284 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 763 236 tgl 30 0 flash_control empty empty 17 7 0 10 -128992
+-1 -1 0 1;
+#X text 807 242 Flash Control;
+#X obj 763 269 bng 30 250 50 0 empty flash_blink empty 17 7 0 20 -33289
+-1 -1;
+#X obj 91 285 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 809 277 Flash Blink;
+#X obj 392 617 bng 30 250 50 0 paper_reload empty empty 17 7 0 10 -83269
+-1 -1;
+#X text 298 621 Reload Papers;
+#X obj 405 591 bng 15 250 50 0 empty no_paper empty 17 7 0 10 -24198
+-1 -1;
+#X obj 277 296 r paper_reload;
+#X obj 395 662 hsl 30 8 0 10 0 0 paper_reload empty empty -2 -8 0 10
+-262130 -260097 -260097 0 1;
+#X obj 371 314 vradio 30 1 0 10 paper_count empty empty 0 10 0 20 -261682
+-260097 -191407 3;
+#X obj 35 222 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 32 242 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 36 201 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array image 100 float 1;
+#A 0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5;
+#X coords 0 1 99 -1 420 180 1 0 0;
+#X restore 445 658 graph;
+#X obj 46 666 r shut_photo;
+#X obj 371 296 r papers;
+#N canvas 411 63 1416 976 start 1;
+#X obj 83 97 inlet;
+#X obj 360 219 > 0;
+#X obj 184 621 sbutton~;
+#X obj 68 187 r shut_photo;
+#X floatatom 221 129 5 0 0 0 - - -, f 5;
+#X obj 422 376 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 599 619 printer~;
+#N canvas 1006 226 853 633 alarm 0;
+#X obj 186 44 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 144 104 metro 400;
+#X obj 144 137 f 0;
+#X obj 205 139 + 1;
+#X obj 144 216 mod 2;
+#X obj 144 248 sig~;
+#X obj 144 304 *~;
+#X obj 144 360 *~;
+#X obj 230 272 < 6;
+#X obj 160 271 osc~ 1098;
+#X obj 100 9 inlet;
+#X obj 144 422 outlet~;
+#X obj 316 280 == 1;
+#X obj 317 318 spigot;
+#X obj 468 318 spigot;
+#X obj 467 280 == 0;
+#X msg 317 369 \; no_paper color 12 \;;
+#X msg 468 368 \; no_paper color 13 \;;
+#X obj 636 196 > 6;
+#X obj 733 220 spigot;
+#X msg 733 247 \; no_paper color 12 \;;
+#X obj 89 109 spigot;
+#X floatatom 42 159 5 0 0 0 - - -, f 5;
+#X obj 635 361 0;
+#X obj 635 383 s alarm_finish;
+#X obj 656 281 spigot;
+#X obj 277 57 r alarm_finish;
+#X obj 93 75 > 0;
+#X obj 235 7 r stop_alarm;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 8 0;
+#X connect 2 0 4 0;
+#X connect 2 0 18 0;
+#X connect 3 0 2 1;
+#X connect 4 0 5 0;
+#X connect 4 0 12 0;
+#X connect 4 0 15 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 8 0 7 1;
+#X connect 9 0 6 1;
+#X connect 10 0 0 0;
+#X connect 10 0 22 0;
+#X connect 10 0 27 0;
+#X connect 12 0 13 0;
+#X connect 12 0 13 1;
+#X connect 13 0 16 0;
+#X connect 14 0 17 0;
+#X connect 15 0 14 0;
+#X connect 15 0 14 1;
+#X connect 18 0 19 0;
+#X connect 18 0 25 0;
+#X connect 18 0 25 1;
+#X connect 19 0 20 0;
+#X connect 21 0 2 0;
+#X connect 23 0 24 0;
+#X connect 25 0 23 0;
+#X connect 26 0 2 0;
+#X connect 27 0 21 0;
+#X connect 27 0 21 1;
+#X connect 28 0 0 0;
+#X connect 28 0 6 0;
+#X restore 68 623 pd alarm;
+#X text 4 602 If there is no paper on the camera;
+#X msg 390 310 \; no_paper color 16 \;;
+#X obj 389 622 shutter~;
+#N canvas 988 201 893 557 flashLight 0;
+#X msg 224 328 \; flash_blink color 12 \;;
+#X msg 516 328 \; flash_blink color 12 \;;
+#X msg 371 327 \; flash_blink color 15 \;;
+#X msg 74 328 \; flash_blink color 15 \;;
+#X obj 89 18 inlet;
+#X msg 292 433 \; lens_blink color 17 \;;
+#X obj 461 509 s lens_blink;
+#X msg 141 436 \; lens_blink color 12 \;;
+#X obj 371 134 del 1000;
+#X obj 514 133 del 1400;
+#X obj 224 136 del 800;
+#X obj 141 266 del 700;
+#X obj 461 465 del 900;
+#X obj 292 271 del 1300;
+#X obj 702 334 outlet;
+#X floatatom 647 232 5 0 0 0 - - -, f 5;
+#X text 338 45 Controlling flash blink and lens blink colors with delays
+;
+#X text 380 67 Changing flash color 4 times per shoot to create more
+intuitive visualization;
+#X connect 4 0 3 0;
+#X connect 4 0 8 0;
+#X connect 4 0 9 0;
+#X connect 4 0 10 0;
+#X connect 4 0 11 0;
+#X connect 4 0 12 0;
+#X connect 4 0 13 0;
+#X connect 8 0 2 0;
+#X connect 9 0 1 0;
+#X connect 9 0 15 0;
+#X connect 10 0 0 0;
+#X connect 11 0 7 0;
+#X connect 12 0 6 0;
+#X connect 13 0 5 0;
+#X connect 15 0 14 0;
+#X restore 903 522 pd flashLight;
+#X obj 327 326 spigot;
+#X obj 656 620 s printer_start;
+#N canvas 391 293 450 299 printer_animate 0;
+#X obj 36 256 tabwrite~ image;
+#X obj 40 65 metro 100;
+#X obj 40 20 r printer_start;
+#X obj 174 194 clip~ -0.5 0.5;
+#X obj 208 23 inlet;
+#X text 254 25 To stop printer animate;
+#X obj 97 168 osc~ 500;
+#X obj 253 96 inlet;
+#X msg 308 146 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 4 0 6 1;
+#X connect 4 0 6 0;
+#X connect 6 0 3 0;
+#X connect 7 0 6 1;
+#X connect 7 0 6 0;
+#X restore 621 654 pd printer_animate;
+#X obj 599 583 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 389 581 del 1000;
+#X obj 599 550 del 2000;
+#X obj 221 90 r paper_count;
+#X obj 936 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 903 492 spigot;
+#X obj 936 440 r flash_control;
+#X obj 114 338 < 1;
+#X obj 327 271 spigot;
+#X obj 68 392 spigot;
+#X floatatom 151 408 5 0 0 0 - - -, f 5;
+#X obj 836 615 flash~;
+#X obj 836 736 dac~;
+#X obj 598 748 dac~;
+#X obj 388 751 dac~;
+#X obj 184 753 dac~;
+#X obj 68 753 dac~;
+#X obj 107 579 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 68 525 1;
+#X obj 114 447 s stop_alarm;
+#X text 314 91 Receıve paper count to control next shoot;
+#X text 395 218 If paper count ıs greater than 0 and shoot button
+has been pressed start takıng pıcture;
+#X text 81 12 Seymur Mammadli;
+#X text 906 386 Chechking flash state and if flash is on starting flash
+effect and flash sound;
+#X text 894 611 Controlling flash sound;
+#X text 586 508 Controllling printer sound and printing animation;
+#X text 95 771 Controlling Shoot button sound;
+#X text 400 642 Controlling shutter sound;
+#X text 516 306 If paper count is greater thant zero set paper warning
+light color to green;
+#X text 126 292 If paper count is less than 1 initiate warning state
+;
+#X obj 460 615 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 278 620 fcharge~;
+#X obj 334 514 1;
+#X obj 335 599 0;
+#X obj 197 192 f 1;
+#X connect 0 0 49 0;
+#X connect 1 0 23 1;
+#X connect 1 0 9 0;
+#X connect 2 0 30 0;
+#X connect 2 0 30 1;
+#X connect 3 0 22 0;
+#X connect 3 0 24 0;
+#X connect 4 0 1 0;
+#X connect 4 0 22 0;
+#X connect 5 0 2 0;
+#X connect 5 0 17 0;
+#X connect 5 0 20 0;
+#X connect 5 0 16 0;
+#X connect 5 0 47 0;
+#X connect 6 0 28 0;
+#X connect 6 0 28 1;
+#X connect 6 1 14 0;
+#X connect 6 2 14 1;
+#X connect 7 0 31 0;
+#X connect 7 0 31 1;
+#X connect 10 0 29 1;
+#X connect 10 0 29 0;
+#X connect 12 0 5 0;
+#X connect 15 0 6 0;
+#X connect 16 0 10 0;
+#X connect 16 0 45 0;
+#X connect 16 0 48 0;
+#X connect 17 0 13 0;
+#X connect 17 0 15 0;
+#X connect 18 0 4 0;
+#X connect 19 0 20 1;
+#X connect 20 0 11 0;
+#X connect 20 0 26 0;
+#X connect 21 0 19 0;
+#X connect 22 0 24 1;
+#X connect 22 0 25 0;
+#X connect 22 0 34 0;
+#X connect 23 0 12 1;
+#X connect 23 0 12 0;
+#X connect 24 0 33 0;
+#X connect 26 0 27 0;
+#X connect 26 0 27 1;
+#X connect 33 0 7 0;
+#X connect 33 0 32 0;
+#X connect 47 0 46 0;
+#X connect 48 0 46 0;
+#X connect 49 0 23 0;
+#X coords 0 976 1 975 85 60 0;
+#X restore 46 708 pd start;
+#X text 41 727 Subpatch to control all parts;
+#X text 443 846 Animating printing effect using oscillator;
+#X text 379 676 Paper count control;
+#X text 45 648 Bang received from start button;
+#X text 909 459 Camera lens animates shutter effect on every shoot
+;
+#X text 405 563 Paper warning blink;
+#X text 36 175 Extra controls;
+#X text 37 72 Middle East Technical University Seymur Mammadli ID:
+1.84833e+06;
+#X connect 26 0 30 0;
+#X connect 29 0 31 0;
+#X connect 36 0 38 0;
+#X connect 37 0 31 0;
