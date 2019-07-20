@@ -5,3 +5,5 @@ Pure data application that simulates Polaroid camera image take pipeline. All so
 - shutter sound<br />
 - flash sound <br />
 - capacitor charging sound<br />
+
+![](LogitechF310GamepadTester.png)
